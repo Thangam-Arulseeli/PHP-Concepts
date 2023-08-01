@@ -11,7 +11,8 @@
     <pre> 
         ***** PHP Arrays
             * PHP array is an ordered map (contains value on the basis of key).
-            * It is used to hold multiple values of similar type in a single variable.
+            * It is used to hold multiple values of similar/different types in a single variable.
+            
         
         *** Advantage of PHP Array
             * Less Code: We don't need to define multiple variables.
@@ -23,6 +24,7 @@
             1.	Indexed Array
             2.	Associative Array
             3.	Multidimensional Array
+            4.  Array within Array  
 
         *** PHP Indexed Array
             * PHP index is represented by number which starts from 0. 
@@ -31,6 +33,7 @@
 
             ** There are two ways to define indexed array:
                 * 1st way:
+                    $person=();
                 	$season=array("summer","winter","spring","autumn");  
                 * 2nd way:
                     $season[0]="Summer";  
@@ -60,7 +63,7 @@
             * Definition
             	$emp = array  
             	  (  
-            	  array(1,"Sona",400000),     1   2   3
+            	 array (1,"Sona",400000),     1   2   3
             	  array(2,"Golda",500000),    4   5   6
             	  array(3,"Swarna",300000)    7   8   9
             	  );  
@@ -145,6 +148,8 @@
                 $season=array("summer","winter","spring","autumn");  
                 echo "Season are: $season[0], $season[1], $season[2] and $season[3]";  
                 echo "<br />";
+                var_dump($season);
+                echo "<br>";
                // Output:
                //     Season are: summer, winter, spring and autumn
         ?>
@@ -247,11 +252,14 @@
 
         <?php
         // Example 4   // Display Array using print_r () 
-        $person = array ('name' => 'Victor', 'age' => 42, 'Address' => array ('23/4-East Street, NGGO Colony', 'Coimbatore', '612007'));
+        $person = array ('name' => 'Victor', 'age' => 42, 'Address' => array ('23/4-East Street, NGGO Colony', 'Coimbatore', 612007));
         print_r ($person);
+        echo "<br>";
         $results = print_r($person, true); // $results now contains output from print_r
         echo $results;
         echo "<br />";
+        var_dump($person);
+        echo "<br>";
         // Output:
         // Array (
         //      [name] => Victor 
@@ -267,9 +275,11 @@
     <?php
         $season = array("Summer","Winter","Spring","Autumn");   // Array declaration & Initialisation    
         echo "Season are: $season[0], $season[1], $season[2] and $season[3] \n "; // Printing array elements 
-        
+        echo "<br>";
+
         echo "No. of elements in the array : " . count($season)  . "\n";   // 4 
-        
+        echo "<br>";
+
         sort($season); echo("\n Sorted Array : "); 
         foreach( $season as $s )    // Array elements in sorted order
             {    
@@ -282,7 +292,7 @@
             echo "$s \t";    
         }    
         echo "<br />";
-        $key=array_search("Spring",$season);    // 2
+        $key=array_search("Spring",$season);    // 2 (index value), If no match null
         echo "\n Search element found in " .$key ."\n";    
         echo "<br />";
         $climate=array("Windy","Summer","Snow Fall","Winter","Rainy");    
@@ -294,12 +304,15 @@
         echo "<br />";
         $salary=array("Kingston"=>"550000","Prince"=>"250000","Queena"=>"200000");    
         print_r(array_change_key_case($salary,CASE_UPPER));  // Change the key to uppercase
+        echo "<br>";
         //Array ( [KINGSTON] => 550000 [PRINCE] => 250000 [QUEENA] => 200000 )
         
         print_r(array_change_key_case($salary,CASE_LOWER));  // Change the key to lowercase
+        echo "<br>";
         //Array ( [kingston] => 550000 [prince] => 250000 [queena] => 200000 )
         
-        print_r(array_chunk($salary,2));   
+        print_r(array_chunk($salary,2));  
+        echo "<br>";
         /*
         Array ( 
         [0] => Array ( [0] => 550000 [1] => 250000 ) 
