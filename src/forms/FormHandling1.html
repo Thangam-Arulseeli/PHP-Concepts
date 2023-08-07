@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Handling1 - GET method </title>
+</head>
+<body>
+    <h2> PHP Form Handling </h2>
+   <pre>
+    * We can create and use Forms & Form elements in PHP.
+    * The form request may be get or post. 
+    * To get form data, we need to use PHP superglobals $_GET and $_POST. 
+    * These are superglobals, which means that they are always accessible,
+       regardless of scope - and you can access them from any function, class or file without having to do anything special.
+    * $_GET is an array of variables passed to the current script via the URL parameters.
+    * $_POST is an array of variables passed to the current script via the HTTP POST method.
+    * To retrieve data from get request, we need to use $_GET, for post request $_POST.
+   
+    -> PHP GET Form
+        * Get request is the default form request.
+        * The data passed through get request is visible on the URL browser
+         (possible to bookmark the page), so it is not secured. 
+          Used for sending non-sensitive data. 
+        * You can send limited amount of data (Limitation is 2000 chars.) through get request.
+
+   -> PHP POST Form
+        * Post request is widely used to submit form that have large amount of data 
+            such as file upload, image upload, login form, registration form etc.
+        * The data passed through post request is not visible on the URL browser 
+            so it is secured (Passing data are embedded within the body of the HTTP request). 
+        * You can send large amount of data through post request.
+        * Supports for multi-part binary input while uploading files to server.
+    </pre>
+    <form action="FormHandling1.php" method="get">   <!-- FULL PATH action="http://localhost/FRESHERS/FormHandling1.php" -->
+        Name: <input type="text" name="uname"/>  <br>
+        E-mail: <input type="text" name="email" /><br>
+        <input type="submit" name="submit" value="PassValue"/>  
+    </form>   
+</body>
+</html>
