@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -72,19 +73,27 @@
 	        * Constructor is suitable for any initialization that the object may need before it is used.
             * Only one constructor is specified in the class, and is not overloaded
             * Construction Creation
-                ** Using  "__construct( )" 
-                ** Using same name as class name.
+                ** Using  __construct( ) 
 	        * Parent constructors are not called implicitly if the child class defines a constructor. 
             * Calls Parent class constructor
                 ** parent::__construct() 
-                ** parent::ParentclassName( )
         
         ***** DESTRUCTOR  (PHP 5 introduces)
            	* We create destructor by using "__destruct" function.
             * Only one destructor is specified in the class
             * The destructor method will be called as soon as all references to a particular object are removed ( or )
               when the object is explicitly destroyed in any order in shutdown sequence.
-	    
+            * Destructors (__destruct ( void): void) are methods which are called 
+                when there is no reference to any object of the class or goes out of scope or
+                 about to release explicitly. 
+            * They don’t have any types or return value. 
+                It is just called before de-allocating memory for an object or 
+                during the finish of execution of PHP scripts or as soon as the execution 
+                control leaves the block. 
+           
+            ** Note: The destructor method is called when the PHP code is executed completely 
+                by its last line by using PHP exit() or die() functions.
+
         ***** TYPE HINTING
             * Type Hinting is method by which we can force function to accept the desired data type.
             * In PHP, we can use type hinting for Object, Array and callable data type.
