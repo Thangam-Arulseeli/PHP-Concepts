@@ -1,0 +1,49 @@
+<html>
+<head>
+    <title> AJAX XML Example </title>
+<script>
+function showCD(str) {
+  if (str=="") {
+    document.getElementById("txtHint").innerHTML="";
+    return;
+  }
+  var xmlhttp=new XMLHttpRequest();
+  xmlhttp.onreadystatechange=function() {
+    if (this.readyState==4 && this.status==200) {
+      document.getElementById("txtHint").innerHTML=this.responseText;
+    }
+  }
+  xmlhttp.open("GET","xmldata.php?q="+str,true);
+  xmlhttp.send();
+}
+</script>
+</head>
+<body>
+    * AJAX can be used for interactive communication with an XML file. 
+    * The following example will demonstrate how a web page can fetch information 
+       from an XML file with AJAX:
+    * Example Explained - The HTML Page
+        *When a user selects a CD in the dropdown list above, 
+            a function called "showCD()" is executed. 
+            The function is triggered by the "onchange" event:
+    <form>
+Select a CD:
+<select name="cds" onchange="showCD(this.value)">
+  <option value="">Select a CD:</option>
+  <option value="Bob Dylan">Bob Dylan</option>
+  <option value="Bee Gees">Bee Gees</option>
+  <option value="Cat Stevens">Cat Stevens</option>
+</select>
+</form>
+<div id="txtHint"><b>CD info will be listed here...</b></div>
+
+<!-- Explanation
+    The showCD() function does the following:
+        * Check if a CD is selected
+        * Create an XMLHttpRequest object
+        * Create the function to be executed when the server response is ready
+        * Send the request off to a file on the server
+        * Notice that a parameter (q) is added to the URL 
+        (with the content of the dropdown list) -->
+</body>
+</html>
