@@ -4,7 +4,7 @@
 function showResult(str) {
   if (str.length==0) {
     document.getElementById("livesearch").innerHTML="";
-    document.getElementById("livesearch").style.border="0px";
+    document.getElementById("livesearch").style.border="1px";
     return;
   }
   var xmlhttp=new XMLHttpRequest();
@@ -23,9 +23,7 @@ function showResult(str) {
 
     <pre> 
         AJAX Live Search
-        * The following example will demonstrate a live search, 
-          where you get search results while you type.
-        
+       
         * Live search has many benefits compared to traditional searching:  
            * Results are shown as you type
            * Results narrow as you continue typing
@@ -40,7 +38,8 @@ function showResult(str) {
 
     </pre>
 <form>
-<input type="text" size="30" onkeyup="showResult(this.value)">
+Type the web element name that you want to navigate: 
+ <input type="text" size="30" onkeyup="showResult(this.value)">
 <div id="livesearch"></div>
 </form>
 

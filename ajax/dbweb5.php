@@ -19,19 +19,27 @@ function showUser(str) {
 </script>
 </head>
 <body>
-    <!-- AJAX Database Example
+  <!-- AJAX Database Example
     The following example will demonstrate how a web page can fetch information from a database with AJAX: -->
-<form>
-<select name="users" onchange="showUser(this.value)">
-  <option value="">Select a person:</option>
-  <option value="1">Peter Griffin</option>
-  <option value="2">Lois Griffin</option>
-  <option value="3">Joseph Swanson</option>
-  <option value="4">Glenn Quagmire</option>
-  </select>
-</form>
-<br>
-<div id="txtHint"><b>Person info will be listed here...</b></div>
+<?php
+  $con = mysqli_connect('localhost:3306','root','12345');
+    if (!$con) {
+    die('Could not connect: ' . mysqli_error($con));
+    }
+
+    mysqli_select_db($con,"MyDbPhp");
+    $sql="SELECT * FROM userdata";
+    $result = mysqli_query($con,$sql);
+
+    echo "<form>";
+    echo "Select User Name : <select name='users' onchange='showUser(this.value)'>
+    <option value=''>Select a person:</option>";
+    while($row = mysqli_fetch_assoc($result)) {
+     echo "<option value='" . $row['id'] . "'>" . $row['name'] . "</option>" ;
+    }
+  echo "</select> </form> <br>"; 
+  echo "<div id='txtHint'><b>Person info will be listed here...</b></div>";
+  ?>
 
 <!-- Example Explained
     In the example above, when a user selects a person in the dropdown list above,

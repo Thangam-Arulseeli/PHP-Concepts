@@ -18,8 +18,8 @@ function getVote(int) {
 <div >
 <h3>Do you like PHP and AJAX so far?</h3>
 <form>
-Yes: <input type="radio" name="vote" value="0" onclick="getVote(this.value)"><br>
-No: <input type="radio" name="vote" value="1" onclick="getVote(this.value)">
+Yes: <input type="radio" name="vote" value="1" onclick="getVote(this.value)"><br>
+No: <input type="radio" name="vote" value="0" onclick="getVote(this.value)">
 </form>
 </div>
 <pre>
@@ -30,13 +30,13 @@ AJAX Poll
     Yes: 
     No: 
     Example Explained - The HTML Page
-    When a user chooses an option above, a function called "getVote()" is executed. The function is triggered by the "onclick" event:
-The getVote() function does the following:
-
-Create an XMLHttpRequest object
-Create the function to be executed when the server response is ready
-Send the request off to a file on the server
-Notice that a parameter (vote) is added to the URL (with the value of the yes or no option)
+    When a user chooses an option above, a function called "getVote()" is executed.
+    The function is triggered by the "onclick" event:
+      The getVote() function does the following:
+        Create an XMLHttpRequest object
+        Create the function to be executed when the server response is ready
+        Send the request off to a file on the server
+        Notice that a parameter (vote) is added to the URL (with the value of the yes or no option)
 </pre>
 </body>
 </html>

@@ -1,7 +1,6 @@
 <?php
-// The page on the server called by the JavaScript above is a PHP file called "livesearch.php".
-
-// The source code in "livesearch.php" searches an XML file for titles matching the search string and returns the result:
+// The page on the server called by the JavaScript above is a PHP file called "searchlinks.php".
+// The source code in "searchlinks.php" searches an XML file for titles matching the search string and returns the result:
 
 $xmlDoc=new DOMDocument();
 $xmlDoc->load("searchlinks.xml");

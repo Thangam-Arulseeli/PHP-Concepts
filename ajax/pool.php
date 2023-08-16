@@ -10,10 +10,9 @@ $array = explode("||", $content[0]);
 $yes = $array[0];
 $no = $array[1];
 
-if ($vote == 0) {
-  $yes = number_format($yes) + 1;
-}
 if ($vote == 1) {
+  $yes = number_format($yes) + 1;
+}else if ($vote == 0) {
   $no = number_format($no) + 1;
 }
 

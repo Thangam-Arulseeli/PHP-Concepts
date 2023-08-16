@@ -17,37 +17,33 @@ th {text-align: left;}
 </head>
 <body>
 <!-- The PHP File
-    The page on the server called by the JavaScript above is a PHP file called "AJAXDB.php".
-    The source code in "AJAXDB.php" runs a query against a MySQL database,
+    The page on the server called by the JavaScript above is a PHP file called "dbdisplay.php".
+    The source code in "dbdisplay.php" runs a query against a MySQL database,
         and returns the result in an HTML table: -->
 
     <?php
     $q = intval($_GET['q']);
 
-    $con = mysqli_connect('localhost','peter','abc123');
+    $con = mysqli_connect('localhost:3306','root','12345');
     if (!$con) {
     die('Could not connect: ' . mysqli_error($con));
     }
 
-    mysqli_select_db($con,"ajax_demo");
-    $sql="SELECT * FROM user WHERE id = '".$q."'";
+    mysqli_select_db($con,"MyDbPhp");
+    $sql="SELECT * FROM userdata WHERE id = '".$q."'";
     $result = mysqli_query($con,$sql);
 
     echo "<table>
     <tr>
-    <th>Firstname</th>
-    <th>Lastname</th>
-    <th>Age</th>
-    <th>Hometown</th>
-    <th>Job</th>
+    <th>ID</th>
+    <th>User Name</th>
+    <th>EMail ID</th>
     </tr>";
     while($row = mysqli_fetch_array($result)) {
         echo "<tr>";
-        echo "<td>" . $row['FirstName'] . "</td>";
-        echo "<td>" . $row['LastName'] . "</td>";
-        echo "<td>" . $row['Age'] . "</td>";
-        echo "<td>" . $row['Hometown'] . "</td>";
-        echo "<td>" . $row['Job'] . "</td>";
+        echo "<td>" . $row['id'] . "</td>";
+        echo "<td>" . $row['name'] . "</td>";
+        echo "<td>" . $row['email'] . "</td>";
         echo "</tr>";
     }
     echo "</table>";

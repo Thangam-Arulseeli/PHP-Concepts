@@ -3,7 +3,6 @@
  <p> AJAX is used to create more interactive applications. </p>
 <?php
 // Example 1 -- Array with names
-// The PHP File - "gethint.php"
 // The PHP file checks an array of names, and returns the corresponding name(s) to the browser:
 $a[] = "Anna";
 $a[] = "Brittany";
