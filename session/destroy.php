@@ -8,5 +8,7 @@ if(isset($_SESSION["email"])){
 }
 session_start();
 session_destroy();
+echo "Session variables are reset and session is destroyed <br> ";
+echo "Email : " . $_SESSION["email"];  // Error, since we unset it already
 ?>
   

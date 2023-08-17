@@ -1,0 +1,1 @@
+Laravel  Symfony  CakePHP  CodeIgniter  Yii 2  Laminas Project  Zend Framework  Phalcon  Slim Framework  FuelPHP  PHPPixie  fwrite() is used to write data into a file

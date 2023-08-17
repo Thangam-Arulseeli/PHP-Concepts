@@ -84,8 +84,8 @@
         // Example 1: READ DATA FROM FILE
         // ** Example Program 1.1:  -- Reads data from the exising file as a whole and print it  
             echo "Reads data from the exising file as a whole and print it <br> ";  
-            $filename = "d:\\xampp\\htdocs\\Freshers\\Assets\\Files\\mydata.txt";
-           // $filename = "http://localhost/FRESHERS/Assets/Files/mydata.txt" ;  
+            $filename = "d:\\xampp\\htdocs\\PHP-Concepts\\assets\\files\\myfile.txt";
+           // $filename = "http://localhost/PHP-Concepts/assets/files/myfile.txt" ;  
             $handle = fopen($filename, "r");//open file in read mode    
               
             $contents = fread($handle, filesize($filename));//read file    
@@ -99,7 +99,7 @@
         <?php  
          // ** Example Program 1.2:  -- Reads data from the exising file and print it line by line
             echo "Reads data from the exising file and print it line by line <br> ";      
-            $filename = "d:\\xampp\\htdocs\\Freshers\\Assets\\Files\\mydata.txt";  
+            $filename = "d:\\xampp\\htdocs\\PHP-Concepts\\assets\\files\\myfile.txt";  
             $fp = fopen($filename, "r");//open file in read mode    
               
             $contents = fread($fp, filesize($filename));//read file    
@@ -113,7 +113,7 @@
     <?php  
          // ** Example Program 1.3:  -- Reads 10 bytes from the exising file and print it 
             echo "Reads 10 bytes from the exising file and print it <br> ";    
-            $filename = "d:\\xampp\\htdocs\\Freshers\\Assets\\Files\\mydata.txt";  
+            $filename = "d:\\xampp\\htdocs\\PHP-Concepts\\assets\\files\\myfile.txt";  
             $fp = fopen($filename, "r");//open file in read mode    
               
             $contents = fread($fp, 10 );// Reads only 10 bytes of data from file     
@@ -173,18 +173,19 @@
         while(!feof($fp)) {  
             echo fgetc($fp);  
         }  
-        fclose($fp);  
+        fclose($fp); 
+        echo "<br>"; 
         ?>    
     <hr>
     <hr>
     
           <?php
             // ** Example Program 4.1:// Create a file for demonstrating append    
-          $fp = fopen('datafile.txt', 'w');//opens file in write-only mode  
-          fwrite($fp, 'Hello Everyone!!!!!');  
-          fclose($fp);  
+        //   $fp = fopen('datafile.txt', 'w');//opens file in write-only mode  
+        //   fwrite($fp, 'Hello Everyone!!!!!');  
+        //   fclose($fp);  
             
-          echo "File written successfully <br>";  
+        //   echo "File written successfully <br>";  
           ?>  
           
           <?php
@@ -210,13 +211,13 @@
     
           <?php 
            // ** Example Program 5.2:// Delete a file  with status  
-          echo "Delete a file with status <br>";    
-          $status=unlink('datafile.txt');    
-          if($status){  
-          echo "File deleted successfully <br> ";    
-          }else{  
-          echo "Sorry! <br>";    
-          }  
+        //   echo "Delete a file with status <br>";    
+        //   $status=unlink('datafile.txt');    
+        //   if($status){  
+        //   echo "File deleted successfully <br> ";    
+        //   }else{  
+        //   echo "Sorry! File Not deleted <br>";    
+        //   }  
           ?>
 
 </body>

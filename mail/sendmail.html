@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Send mail to multiple users</title>
+</head>
+<body>
+    <h4>Send mail to multiple users</h4>
+    <form method="GET" action="sendmail.php">
+        To   :  <input type="text" name="to" size="60"> <br><br>
+        From : <input type="text" name="from" size="60" value="seeliseelan@gmail.com"> <br><br>
+        CC   : <input type="text" name="cc" size="60"> <br><br>
+        BCC  : <input type="text" name="bcc" size="60"> <br><br>
+        Subject : <input type="text" name="subject" size="60"> <br><br>
+        <textarea name="mailbody" rows="6" cols="60"></textarea>
+        <input type="submit" name="send" value="SEND"> <br><br>
+    </form>
+</body>
+</html>

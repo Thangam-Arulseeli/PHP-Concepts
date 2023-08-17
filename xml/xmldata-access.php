@@ -92,9 +92,9 @@
 
 <hr>
     <?php
-       // Example 1 // Retrieve XML data in PHP 
+       // Example 1.1 // Retrieve XML data in PHP 
        // Assume we have a variable $myXMLData  that contains XML data
-         echo "Example 1: <br>";
+         echo "Example 1.1: <br>";
          echo "<h4>Get XML data, which is defined in php file and print it....</h4>";
             $myXMLData =
             "<?xml version='1.0' encoding='UTF-8'?>
@@ -113,7 +113,7 @@
         echo "<br>";
     // ** The output of the code above will be:
     
-    // SimpleXMLElement Object ( [to] => Pallavi [from] => Blessie [heading] => Reminder [body] => Don't forget to come to my home this weekend! )
+    // SimpleXMLElement Object ( [to] => Blessie [from] => Arulseeli [heading] => Reminder [body] => Don't forget to come to my home this weekend! )
     // ** Error Handling Tip: 
        //Use the libxml functionality to retrieve all XML errors when loading the document 
        //and then iterate over the errors. 
@@ -123,16 +123,16 @@
     <hr>
 
     <?php
-        // Example 2  // To handle XML errors
+        // Example 1.2  // To handle XML errors
         // Error Handling Tip: Use the libxml functionality to retrieve all XML errors
         //  when loading the document and then iterate over the errors. 
         // The following example tries to load a broken XML string:
-             echo "Example 2: <br>";
+             echo "Example 1.2: <br>";
             libxml_use_internal_errors(true);
             $myXMLData =
             "<?xml version='1.0' encoding='UTF-8'?>
             <document>
-                <user>Arulseeli</user>
+                <userdata >Arulseeli </userdata>
                 <email>seeliseelan@example.com</email>
             </document>";
 
@@ -155,22 +155,22 @@
       <?php
         // <!-- XML File contains data -->
         // <?xml version="1.0" encoding="UTF-8"?>
-        //     <note>
-        //     <to>Gayatri<to>
-        //     <from>Arulseeli</from>
-        //     <heading>Reminder</heading>
-        //     <body>Don't forget to call me when you are free!!!!</body>
-        //     </note>
+        //     <notes>
+            //     <to>Rama Devi<to>
+            //     <from>Arulseeli</from>
+            //     <heading>Reminder</heading>
+            //     <body>Don't forget to call me when you are free!!!!</body>
+        //     </notes>
         ?>
         <!-- The example below shows how to use the simplexml_load_file() function 
             to read XML data from a file   -->
      <hr>
 
         <?php
-            // Example 3   // Reads the data from XML file  
-            echo "Example 3: <br>";
+            // Example 2.1   // Reads the data from XML file - notes.xml 
+            echo "Example 2.1: <br>";
             echo "<br> Loads data from external XML File <br>";
-            $xml=simplexml_load_file("http://localhost/freshers/node.xml") or die("Error: Cannot create object");
+            $xml=simplexml_load_file("http://localhost/php-concepts/assets/files/nodes.xml") or die("Error: Cannot create object");
             print_r($xml);
             echo "<br>";
             // Output 
@@ -179,11 +179,11 @@
 <hr>
 
     <?php
-        // Example 4   // PHP SimpleXML - Get Node/Attribute Values
+        // Example 2.2   // PHP SimpleXML - Get Node/Attribute Values
         // SimpleXML is a PHP extension that allows us to easily manipulate and get XML data. 
-        // Get the node values from the "note.xml" file
-        echo "Example 4: <br>";
-        $xml=simplexml_load_file("http://localhost/freshers/node.xml") or die("Error: Cannot create object");
+        // Get the node values from the "notes.xml" file
+        echo "Example 2.2: <br>";
+        $xml=simplexml_load_file("http://localhost/php-concepts/assets/files/nodes.xml") or die("Error: Cannot create object");
         echo $xml->to . "<br>";
         echo $xml->from . "<br>";
         echo $xml->heading . "<br>";
@@ -200,11 +200,11 @@
 <hr>
 
     <?php
-        // Example 5  // PHP SimpleXML - Get Node Values of Specific Elements (Have books.xml)
+        // Example 2.3  // PHP SimpleXML - Get Node Values of Specific Elements (Have books.xml)
         // Gets the node value of the <title> element in the first and
         // second <book> elements in the "books.xml" file: 
-        echo "Example 5: <br>";
-        $xml=simplexml_load_file("http://localhost/freshers/books.xml") or die("Error: Cannot create object");
+        echo "Example 2.3: <br>";
+        $xml=simplexml_load_file("http://localhost/php-concepts/assets/files/books.xml") or die("Error: Cannot create object");
         echo $xml->book[0]->title . "<br>";
         echo $xml->book[1]->title . "<br>";
         echo $xml->book[2]->title . "<br>";
@@ -218,9 +218,9 @@
        <hr>
 
     <?php
-        // Example 6  // PHP SimpleXML - Get Node Values - Iterate using foreach Loop 
-        echo "Example 6: <br>";
-        $xml=simplexml_load_file("http://localhost/freshers/books.xml") or die("Error: Cannot create object");
+        // Example 2.4  // PHP SimpleXML - Get Node Values - Iterate using foreach Loop 
+        echo "Example 2.4: <br>";
+        $xml=simplexml_load_file("http://localhost/php-concepts/assets/files/books.xml") or die("Error: Cannot create object");
         foreach($xml->children() as $books) {
             echo $books->title . ", ";
             echo $books->author . ", ";
@@ -231,9 +231,9 @@
 
 <hr>
     <?php
-        // Example 7  // PHP SimpleXML - Get Attribute Values
-        echo "Example 7: <br>";
-        $xml=simplexml_load_file("http://localhost/freshers/books.xml") or die("Error: Cannot create object");
+        // Example 3.1  // PHP SimpleXML - Get Attribute Values
+        echo "Example 3.1: <br>";
+        $xml=simplexml_load_file("http://localhost/php-concepts/assets/files/books.xml") or die("Error: Cannot create object");
         echo $xml->book[0]['category'] . "<br>";
         echo $xml->book[1]->title['lang'] . "<br> <br>";
 
@@ -245,10 +245,10 @@
 
 <hr>
     <?php
-        // Example 8  // PHP SimpleXML - Get Attribute Values - Loop
+        // Example 3.2  // PHP SimpleXML - Get Attribute Values - Loop
         // Gets the attribute values of the <title> elements in the "books.xml" file
-        echo "Example 8: <br>";
-        $xml=simplexml_load_file("http://localhost/freshers/books.xml") or die("Error: Cannot create object");
+        echo "Example 3.2: <br>";
+        $xml=simplexml_load_file("http://localhost/php-concepts/assets/files/books.xml") or die("Error: Cannot create object");
         foreach($xml->children() as $books) {
         echo $books->title['lang'];
         echo "<br>";
@@ -263,11 +263,11 @@
 <hr>
 
     <?php
-        // Example 9 //  Initializing the XML Expat Parser
+        // Example 4 //  Initializing the XML Expat Parser
         // We want to initialize the XML Expat Parser in PHP, 
         // define some handlers for different XML events, and then parse the XML file.
 
-        echo "Example 9: <br>";
+        echo "Example 4: <br>";
         // Initialize the XML parser
         $parser=xml_parser_create();
 
@@ -308,7 +308,7 @@
         xml_set_character_data_handler($parser,"char");
 
         // Open XML file
-        $fp=fopen("http://localhost/freshers/node.xml","r");
+        $fp=fopen("http://localhost/php-concepts/assets/files/nodes.xml","r");
 
         // Read data
         while ($data=fread($fp,4096)) {
@@ -327,34 +327,34 @@
         // Create functions to use with the different event handlers
         // Add the xml_set_element_handler() function to specify which function will be executed when the parser encounters the opening and closing tags
         // Add the xml_set_character_data_handler() function to specify which function will execute when the parser encounters character data
-        // Parse the file "note.xml" with the xml_parse() function
+        // Parse the file "nodes.xml" with the xml_parse() function
         // In case of an error, add xml_error_string() function to convert an XML error to a textual description
         // Call the xml_parser_free() function to release the memory allocated with the xml_parser_create() function
     ?>
 
 <hr>
     <?php
-        // Example 10  //  Load and Output XML
+        // Example 5  //  Load and Output XML
         // Initializes the XML parser, load the xml, and output it:
-        echo "Example 10: <br>";
+        echo "Example 5: <br>";
         $xmlDoc = new DOMDocument();
-        $xmlDoc->load("http://localhost/freshers/node.xml");
+        $xmlDoc->load("http://localhost/php-concepts/assets/files/nodes.xml");
 
         print $xmlDoc->saveXML();
 
         //The output of the code above will be:
 
-        // Pallavi Arulseeli Reminder Don't forget me this weekend!
+        // Rama Devi Arulseeli Reminder Don't forget me this weekend!
         // If you select "View source" in the browser window,
         // you will see the following HTML:
 
         // <?xml version="1.0" encoding="UTF-8"?>
-        // <note>
+        // <notes>
         // <to>Blessie</to>
         // <from>Arulseeli</from>
         // <heading>Reminder</heading>
         // <body>Don't forget to come to my home this weekend!</body>
-        // </note>
+        // </notes>
         // The example above creates a DOMDocument-Object and loads the XML from "note.xml" into it.
 
         // Then the saveXML() function puts the internal XML document into a string, so we can output it.
@@ -363,11 +363,11 @@
     <hr>
 
 <?php
-    // Example 11  //  Looping through XML
+    // Example 6  //  Looping through XML
     // We want to initialize the XML parser, load the XML, and loop through all elements of the <note> element:
-    echo "Example 11: <br>";
+    echo "Example 6: <br>";
     $xmlDoc = new DOMDocument();
-    $xmlDoc->load("http://localhost/freshers/node.xml");
+    $xmlDoc->load("http://localhost/php-concepts/assets/files/nodes.xml");
 
     $x = $xmlDoc->documentElement;
     foreach ($x->childNodes AS $item) {
