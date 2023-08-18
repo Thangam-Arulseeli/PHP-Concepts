@@ -8,15 +8,15 @@ $mailsubject = $_POST['subject'];
 $message= $_POST['mailbody'];
 
 // Always set content-type when sending HTML email
-// $header = "MIME-Version: 1.0" . "\r\n";
-// $header .= "ntent-type:text/html;charset=UTF-8" . "\r\n";
+ $header = "MIME-Version: 1.0" . "\r\n";
+ $header .= "content-type:text/html;charset=UTF-8" . "\r\n";
 
 // // More headers
-// $header .= 'From: ' . $mailfrom . "\r\n";
-// $header .= 'Cc: ' . $mailcc  . "\r\n";
-// $header .= 'Bcc: ' . $mailbcc  . "\r\n";
+ $header .= 'From: ' . $mailfrom . "\r\n";
+ $header .= 'Cc: ' . $mailcc  . "\r\n";
+ $header .= 'Bcc: ' . $mailbcc  . "\r\n";
 
-$header = "From: PHP code for sending mail";
+//$header = "From: PHP code for sending mail";
 $confirm = mail($mailto,$mailsubject,$message,$header);
 
 if ($confirm){
