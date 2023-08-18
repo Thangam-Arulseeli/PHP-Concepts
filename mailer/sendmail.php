@@ -37,9 +37,9 @@ use PHPMailer\PHPMailer\PHPMailer;
 $mail = new PHPMailer; //From email address and name 
 $mail->From = $mailfrom; 
 $mail->FromName = "Arulseeli Tuticorin"; //To address and name 
-$mail->addAddress($mailto, "SeeliSeelan");//Recipient name is optional
+$mail->addAddress($mailto, "Harishmitha");//Recipient name is optional
 $mail->addAddress($mailfrom); //Address to which recipient will reply 
-$mail->addReplyTo("reply@yourdomain.com", "Reply"); //CC and BCC 
+$mail->addReplyTo("seeliseelan@gmail.com", "Reply"); //CC and BCC 
 $mail->addCC($mailcc); 
 $mail->addBCC($mailbcc); //Send HTML or Plain Text email 
 $mail->isHTML(true); 

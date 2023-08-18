@@ -7,7 +7,7 @@
 </head>
 <body>
     <h4>Send mail to multiple users</h4>
-    <form method="GET" action="sendmail.php">
+    <form method="POST" action="sendmail.php">
         To   :  <input type="text" name="to" size="60"> <br><br>
         From : <input type="text" name="from" size="60" value="seeliseelan@gmail.com"> <br><br>
         CC   : <input type="text" name="cc" size="60"> <br><br>
@@ -16,5 +16,66 @@
         <textarea name="mailbody" rows="6" cols="60"></textarea>
         <input type="submit" name="send" value="SEND"> <br><br>
     </form>
+
+   <br><br>
+        <pre>
+        *** Important Error:
+        Warning: mail(): Failed to connect to mailserver at "localhost" port 25, verify your "SMTP" and "smtp_port" setting in php.ini or use ini_set() in D:\xampp\htdocs\PHP-Concepts\mail\sendmail.php on line 19
+        Mail could not be sent!!!
+        *** To rectify above error [Configure php.ini file] 
+        1. Go to d:/xampp/php/
+        2. Search for smtp [It is in mail function] 
+        3. Get the following smtp details 
+            i. SMTP=localhost
+            ii. smtp_port=25
+            iii. sendmail_from=
+            iv. sendmail_path=
+            -- ----------------------------
+          a. Change the details  [Search smtp]
+          [mail function]
+          ; For Win32 only.
+          ; http://php.net/smtp
+          SMTP=localhost
+          ; http://php.net/smtp-port
+          smtp_port=25
+          -- ------------------------------------
+          [mail function]
+                ; For Win32 only.
+                ; http://php.net/smtp
+                SMTP=smtp.gmail.com     // Change it
+                ; http://php.net/smtp-port
+                smtp_port=587    // Change it
+
+                ; For Win32 only.
+                ; http://php.net/sendmail-from
+                sendmail_from=seeliseelan@gmail.com    // Change it
+
+                ; For Unix only.  You may supply arguments as well (default: "sendmail -t -i").
+                ; http://php.net/sendmail-path
+                sendmail_path = "\"D:\xampp\sendmail\sendmail.exe" -t"     // Change it
+
+          -- ----------------------------------
+        4. Go to sendmail.ini file in d:/xampp/sendmail folder and enter the follwing 
+                [sendmail]
+        
+                smtp_server=smtp.gmail.com
+                smtp_port=587
+                error_logfile=error.log
+                debug_logfile=debug.log
+                auth_username=seeliseelan@gmail.com
+                auth_password=my-gmail-app-password
+                force_sender=seeliseelan@gmail.com
+            IMPORTANT NOTE:: To generate my-gmail-app-password 
+                    To Generate AppPassword 
+                 Goto Gmail - Google Account
+                 Confirm 2-way verification is ON
+                 Type AppPassword and go inside 
+                 Select App - Click it
+                 Give name for your app [smtp_testing] 
+                 Password is generated - 
+                 Copy and paste the password in the place of auth_password
+                 Link for guidance - https://www.youtube.com/watch?v=4TmD4ly7V_E 
+        </pre>
+       
 </body>
 </html>

@@ -96,7 +96,7 @@ D:\xampp\htdocs\PHP-Concepts\src\concepts
 	    }    
 	    test_function();    
 	    //give the blank output.   
-	    echo "Outside the function : " . __FUNCTION__ . "<br><br>";  
+	    	;  
 	?>  
 Output:
 Example for __FUNCTION__
@@ -120,7 +120,8 @@ Outside the function :
 	    class MyClass    
 	    {    
 	        public function __construct() {    
-	            ;    
+	            echo "__class__ constant inside constructor : ". __CLASS__ . "<br>";  
+				echo "__function__ constant inside constructor : " . __FUNCTION__ . "<br>";  
     }    
 	    function getClassName(){    
 	        //print name of the class .   
@@ -129,23 +130,30 @@ Outside the function :
 	    }    
 	    $t = new MyClass;    
 	    $t->getClassName();    
-	echo " --------------------- <br> " ;   
+	echo " --------------------- <br> " ;  
+
 	    //In case of Inheritance    
 	    class Base  
 	    {    
 	    function test_first(){    
 	            //will always print base class which is Base here.    
-	            echo __CLASS__;   
+	            echo __CLASS__ . "<br>";   
 	        }    
 	    }    
 	    class Derived extends Base    
 	    {    
 	        public function __construct() {    
 	            ;    
-	        }    
+	        }  
+			function test_second(){    
+	            //will always print base class which is Base here.    
+	            echo __CLASS__ . "<br>";   
+	        }      
 	    }    
 	    $t = new Derived;    
-	    $t->test_first();    
+	    $t->test_first(); // Base class function
+		$t->test_second(); // Derived class function 
+		echo "<br><br>";   
 	?>  
 Output:
 Example for __CLASS__
@@ -153,6 +161,7 @@ Example for __CLASS__
 MyClass
  --------------------- 
  Base  
+ Derived
 
  <hr>
 
@@ -234,7 +243,8 @@ This line will print on calling namespace.
       * It returns the fully qualified name of the ClassName. 
       * ClassName::class is added in PHP 5.5.0. It is useful with namespaced classes.
 
-	<?php  // namespace Technical_Portal;  -- Error, since it is not the first statement
+	<?php  
+	 //namespace Technical_Portal;  // Error, since it is not the first statement
 	    echo "<h3>Example for CLASSNAME::CLASS </h3>";  
 	    class training {    
 	    }  
@@ -355,15 +365,6 @@ Note: Remember namespace must be the very first statement or
 			echo $_SERVER['HTTP_USER_AGENT'];
 			echo "<br>";
 			echo $_SERVER['SCRIPT_NAME'];
-			/* OUTPUT
-				/demo/demo_global_server.php
-				35.194.26.41
-				35.194.26.4 
-				https://tryphp.w3schools.com/showphp.php?filename=demo_global_server
-				Mozilla/5.0 (Linux; Android 10; Redmi 7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Mobile Safari/537.36
-				/demo/demo_global_server.php
-				*/
-
 			?>
 	<pre>
 		<h3> // Example shows how to use $_REQUEST['fname'] to get the form inputs </h3>
