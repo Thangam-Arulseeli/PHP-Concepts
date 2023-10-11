@@ -5,15 +5,22 @@
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title> My PHP File </title>
-</head>
-<style>
+   <style>
    pre{
       color: blue; 
-      
-      </style>
+   }
+</style>
+
+</head>
+
+
 <body>
 <pre>
 *** PHP program is saved with .php extension
+*** Create new folder for your php project & files under htdocs folder 
+    where xampp is installed in your system. 
+    In this system XAMPP is installed in D:\xampp\
+    D:\xampp\htdocs\PHP-Concepts\
 
 *** The syntax of PHP tag is given below: 
 	<?php   
@@ -26,15 +33,31 @@
       ?>
 
 *** Ways to Run the PHP program *** 
+
 1. Right click on the php file and select Code runner to execute php page.
    Code Runner runs(interprets) PHP code only, it doesn't interpret HTML tags.
    The result of php code is displayed in output window
 2. To execute and view the php page in the browser.
    Start Apache Tomcat Server for executing Server-Side Script
-   Open the web browser and type http://localhost/Freshers/first.php
-   on your browser window. 
+   Open the web browser and type http://localhost/PHP-Concepts/src/concepts/first.php
+   on your browser window.
+   
+NOTE: 
+   *** “localhost/index.php” refers to the “index.php” PHP file 
+      located in the root directory of a local web server.
+
+   *** Localhost is a hostname that refers to the local machine currently making the request.
+       On many computers, localhost is an alias for the IP address 127.0. 0.1. 
+       When a computer pings this IP address, it is communicating with itself.
+   
+   *** The IP address 127.0. 0.1 is called a loopback address.
+       Packets sent to this address never reach the network 
+          but are looped through the network interface card only. 
+       This can be used for diagnostic purposes to verify that the internal path through
+         the TCP/IP protocols is working.
 
 *** Case Sensitivity - PHP  ***
+
 * In PHP, keyword (e.g., echo, if, else, while), functions, user-defined functions, classes are not case-sensitive.
 * However, all variable names are case-sensitive. Variable $pname and $PName are different
 

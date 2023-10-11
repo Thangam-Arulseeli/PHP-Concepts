@@ -56,5 +56,13 @@ $mail = @mail($to, $subject, $message, $headers, $returnpath);
  
 // Email sending status 
 echo $mail?"<h1>Email Sent Successfully!</h1>":"<h1>Email sending failed.</h1>"; 
- 
+ // Reference Link for mail attachment -- https://www.codexworld.com/send-email-with-attachment-php/ 
+  
+    // Reference link for async function call 
+     //   2.  https://www.educba.com/php-async/ 
+   // Example     3.  https://code.tutsplus.com/how-to-use-async-in-php--cms-39199t 
+// Basics 1:  https://github.com/spatie/async 
+// Async API call --- https://www.geeksforgeeks.org/how-to-make-asynchronous-http-requests-in-php/ 
+// Asynchonous GET request -- https://stackoverflow.com/questions/962915/how-do-i-make-an-asynchronous-get-request-in-php 
+
 ?>
